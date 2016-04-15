@@ -1,0 +1,44 @@
+{
+    "name":        "arcanedev/laravel-markdown",
+    "description": "Markdown parsing for Laravel with blade directives",
+    "keywords":    ["arcanedev", "laravel", "markdown", "parser", "parsing", "md", "blade"],
+    "homepage":    "https://github.com/ARCANEDEV/LaravelMarkdown",
+    "authors": [
+        {
+            "name":     "ARCANEDEV",
+            "email":    "arcanedev.maroc@gmail.com",
+            "homepage": "https://github.com/arcanedev-maroc",
+            "role":     "Developer"
+        }
+    ],
+    "type":    "library",
+    "license": "MIT",
+    "require": {
+        "php":               ">=5.5.9",
+        "arcanedev/support": "~3.0",
+        "erusev/parsedown":  "~1.6"
+    },
+    "require-dev": {
+        "phpunit/phpcov":   "~2.0|~3.0",
+        "phpunit/phpunit":  "~4.0|~5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Arcanedev\\LaravelMarkdown\\": "src/"
+        },
+        "files": ["helpers.php"]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Arcanedev\\LaravelMarkdown\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "testbench": "composer require --dev \"orchestra/testbench=~3.0\""
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
