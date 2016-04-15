@@ -1,4 +1,4 @@
-# Markdown for Laravel  [![Packagist License][badge_license]](LICENSE.md) [![For PHP][badge_php]](https://github.com/ARCANEDEV/LaravelMarkdown)
+# Markdown for Laravel  [![Packagist License][badge_license]](LICENSE.md) [![For Laravel 5][badge_laravel]](https://github.com/ARCANEDEV/LaravelMarkdown)
 
 [![Travis Status][badge_build]](https://travis-ci.org/ARCANEDEV/LaravelMarkdown)
 [![HHVM Status][badge_hhvm]](http://hhvm.h4cc.de/package/arcanedev/laravel-markdown)
@@ -12,7 +12,7 @@
 [![Packagist Downloads][badge_downloads]](https://packagist.org/packages/arcanedev/laravel-markdown)
 
 [badge_license]:   https://img.shields.io/packagist/l/arcanedev/laravel-markdown.svg?style=flat-square
-[badge_php]:       https://img.shields.io/badge/PHP-Framework%20agnostic-4F5B93.svg?style=flat-square
+[badge_laravel]:   https://img.shields.io/badge/For-Laravel%205.1|5.2-orange.svg?style=flat-square
 
 [badge_build]:     https://img.shields.io/travis/ARCANEDEV/LaravelMarkdown.svg?style=flat-square
 [badge_hhvm]:      https://img.shields.io/hhvm/arcanedev/laravel-markdown.svg?style=flat-square
