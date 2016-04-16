@@ -88,7 +88,7 @@ class PagesController implements Controller
     /**
      * Create a new instance.
      *
-     * @param  Mailer  $mailer
+     * @param  \Arcanedev\LaravelMarkdown\Contracts\Parser  $parser
      */
     public function __construct(MarkdownParser $parser)
     {
