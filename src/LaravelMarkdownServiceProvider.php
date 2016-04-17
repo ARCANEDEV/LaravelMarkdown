@@ -29,6 +29,13 @@ class LaravelMarkdownServiceProvider extends PackageServiceProvider
      */
     protected $package = 'markdown';
 
+    /**
+     * Indicates if loading of the provider is deferred.
+     *
+     * @var bool
+     */
+    protected $defer   = true;
+
     /* ------------------------------------------------------------------------------------------------
      |  Getters & Setters
      | ------------------------------------------------------------------------------------------------
@@ -69,10 +76,7 @@ class LaravelMarkdownServiceProvider extends PackageServiceProvider
      */
     public function boot()
     {
-        $this->publishes([
-            $this->getConfigFile() => config_path('markdown.php'),
-        ]);
-
+        $this->publishConfig();
         $this->registerBladeDirectives();
     }
 
