@@ -51,7 +51,7 @@ class MarkdownParser implements Parser
     /**
      * Parses a markdown string to HTML.
      *
-     * @param  string $content
+     * @param  string  $content
      *
      * @return string
      */

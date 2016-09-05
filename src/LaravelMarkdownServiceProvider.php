@@ -16,13 +16,6 @@ class LaravelMarkdownServiceProvider extends PackageServiceProvider
      | ------------------------------------------------------------------------------------------------
      */
     /**
-     * Vendor name.
-     *
-     * @var string
-     */
-    protected $vendor  = 'arcanedev';
-
-    /**
      * Package name.
      *
      * @var string
@@ -105,14 +98,16 @@ class LaravelMarkdownServiceProvider extends PackageServiceProvider
         /** @var  \Illuminate\View\Compilers\BladeCompiler  $blade */
         $blade = $this->app['view']->getEngineResolver()->resolve('blade')->getCompiler();
 
-        $blade->directive('markdown', function ($markdown) {
-            return is_null($markdown)
-                ? '<?php markdown()->begin() ?>'
-                : "<?php echo markdown()->parse($markdown); ?>";
+        $blade->directive('parsedown', function ($markdown) {
+            return "<?php echo markdown()->parse($markdown); ?>";
+        });
+
+        $blade->directive('markdown', function () {
+            return '<?php markdown()->begin(); ?>';
         });
 
         $blade->directive('endmarkdown', function () {
-            return '<?php echo markdown()->end() ?>';
+            return '<?php echo markdown()->end(); ?>';
         });
     }
 }
