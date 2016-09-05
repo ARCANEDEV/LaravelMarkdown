@@ -2,29 +2,29 @@
 
 ## Table of contents
 
-* [Blade](#blade)
-* [Helper](#helper)
-* [Facade](#facade)
-* [Service Container](#service-container)
+  * [Blade](#blade)
+  * [Helper](#helper)
+  * [Facade](#facade)
+  * [Service Container](#service-container)
 
 ### Blade
 
-The Markdown parser can be used in your Blade files with the `@markdown` directive:
+The Markdown parser can be used in your Blade files with the `@parsedown` directive:
 
 ```html
 <article>
     <h1 class="page-header">{{ $post->title }}</h1>
 
     <section class="content">
-        @markdown($post->content)
+        @parsedown($post->content)
     </section>
 </article>
 ```
 
-You can also use it as `@section` blocks syntax:
+You can also use the `@markdown()` blade directive as the `@section` blocks syntax:
 
 ```markdown
-@markdown
+@markdown()
 # My awesome header
 
 This text is *italic* but this one is **bold**, you can also add a [Link](http://www.example.com).
