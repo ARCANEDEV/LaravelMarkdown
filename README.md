@@ -21,17 +21,17 @@ Feel free to check out the [releases](https://github.com/ARCANEDEV/LaravelMarkdo
 
 ### Features
 
-  * Laravel 5.1 & 5.2 are Supported.
+  * Laravel `5.1 | 5.2 | 5.3` are Supported.
   * Easy setup & configuration.
   * Well tested (100% code coverage with maximum code quality).
   * Made with :heart: &amp; :coffee:.
 
 ## Table of contents
 
-1. [Requirements](_docs/1-Requirements.md)
-2. [Installation and Setup](_docs/2-Installation-and-Setup.md)
-3. [Configuration](_docs/3-Configuration.md)
-4. [Usage](_docs/4-Usage.md)
+  1. [Requirements](1-Requirements.md)
+  2. [Installation and Setup](2-Installation-and-Setup.md)
+  3. [Configuration](3-Configuration.md)
+  4. [Usage](4-Usage.md)
 
 ## Contribution
 
@@ -47,7 +47,7 @@ If you discover any security related issues, please email arcanedev.maroc@gmail.
 - [All Contributors][link-contributors]
 
 [badge_license]:     https://img.shields.io/packagist/l/arcanedev/laravel-markdown.svg?style=flat-square
-[badge_laravel]:     https://img.shields.io/badge/For-Laravel%205.1|5.2-orange.svg?style=flat-square
+[badge_laravel]:     https://img.shields.io/badge/Laravel-%205.1|5.2|5.3-orange.svg?style=flat-square
 [badge_build]:       https://img.shields.io/travis/ARCANEDEV/LaravelMarkdown.svg?style=flat-square
 [badge_hhvm]:        https://img.shields.io/hhvm/arcanedev/laravel-markdown.svg?style=flat-square
 [badge_coverage]:    https://img.shields.io/scrutinizer/coverage/g/ARCANEDEV/LaravelMarkdown.svg?style=flat-square
