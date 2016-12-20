@@ -58,8 +58,8 @@ class LaravelMarkdownServiceProviderTest extends TestCase
     public function it_can_provides()
     {
         $expected = [
-            'arcanedev.markdown',
             \Arcanedev\LaravelMarkdown\Contracts\Parser::class,
+            'arcanedev.markdown',
         ];
 
         $this->assertEquals($expected, $this->provider->provides());

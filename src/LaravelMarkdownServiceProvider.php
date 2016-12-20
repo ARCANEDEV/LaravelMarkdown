@@ -54,14 +54,11 @@ class LaravelMarkdownServiceProvider extends PackageServiceProvider
     {
         $this->registerConfig();
 
-        $this->app->singleton('arcanedev.markdown', function () {
+        $this->singleton(Contracts\Parser::class, function () {
             return new MarkdownParser(new Parsedown);
         });
 
-        $this->bind(
-            \Arcanedev\LaravelMarkdown\Contracts\Parser::class,
-            'arcanedev.markdown'
-        );
+        $this->singleton('arcanedev.markdown', Contracts\Parser::class);
     }
 
     /**
@@ -81,8 +78,8 @@ class LaravelMarkdownServiceProvider extends PackageServiceProvider
     public function provides()
     {
         return [
+            Contracts\Parser::class,
             'arcanedev.markdown',
-            \Arcanedev\LaravelMarkdown\Contracts\Parser::class,
         ];
     }
 
