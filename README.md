@@ -1,7 +1,6 @@
 # Markdown for Laravel  [![Packagist License][badge_license]](LICENSE.md) [![For Laravel 5][badge_laravel]][link-github-repo]
 
 [![Travis Status][badge_build]][link-travis]
-[![HHVM Status][badge_hhvm]][link-hhvm]
 [![Coverage Status][badge_coverage]][link-scrutinizer]
 [![Scrutinizer Code Quality][badge_quality]][link-scrutinizer]
 [![SensioLabs Insight][badge_insight]][link-insight]
@@ -49,7 +48,6 @@ If you discover any security related issues, please email arcanedev.maroc@gmail.
 [badge_license]:     https://img.shields.io/packagist/l/arcanedev/laravel-markdown.svg?style=flat-square
 [badge_laravel]:     https://img.shields.io/badge/Laravel-%205.1|5.2|5.3-orange.svg?style=flat-square
 [badge_build]:       https://img.shields.io/travis/ARCANEDEV/LaravelMarkdown.svg?style=flat-square
-[badge_hhvm]:        https://img.shields.io/hhvm/arcanedev/laravel-markdown.svg?style=flat-square
 [badge_coverage]:    https://img.shields.io/scrutinizer/coverage/g/ARCANEDEV/LaravelMarkdown.svg?style=flat-square
 [badge_quality]:     https://img.shields.io/scrutinizer/g/ARCANEDEV/LaravelMarkdown.svg?style=flat-square
 [badge_insight]:     https://img.shields.io/sensiolabs/i/16b49ea3-2650-4d11-8d14-a91da3a020b8.svg?style=flat-square
@@ -64,6 +62,5 @@ If you discover any security related issues, please email arcanedev.maroc@gmail.
 [link-contributors]:  https://github.com/ARCANEDEV/LaravelMarkdown/graphs/contributors
 [link-packagist]:     https://packagist.org/packages/arcanedev/laravel-markdown
 [link-travis]:        https://travis-ci.org/ARCANEDEV/LaravelMarkdown
-[link-hhvm]:          http://hhvm.h4cc.de/package/arcanedev/laravel-markdown
 [link-scrutinizer]:   https://scrutinizer-ci.com/g/ARCANEDEV/LaravelMarkdown/?branch=master
 [link-insight]:       https://insight.sensiolabs.com/projects/16b49ea3-2650-4d11-8d14-a91da3a020b8
