@@ -1,4 +1,4 @@
-# 2. Installation
+# 1. Installation
 
 ## Server Requirements
 

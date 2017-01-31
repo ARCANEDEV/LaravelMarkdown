@@ -1,4 +1,4 @@
-# 3. Configuration
+# 2. Configuration
 
 ```php
 <?php
