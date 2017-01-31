@@ -54,11 +54,7 @@ class LaravelMarkdownServiceProvider extends PackageServiceProvider
     {
         $this->registerConfig();
 
-        $this->singleton(Contracts\Parser::class, function () {
-            return new MarkdownParser(new Parsedown);
-        });
-
-        $this->singleton('arcanedev.markdown', Contracts\Parser::class);
+        $this->registerMarkdownParser();
     }
 
     /**
@@ -79,7 +75,6 @@ class LaravelMarkdownServiceProvider extends PackageServiceProvider
     {
         return [
             Contracts\Parser::class,
-            'arcanedev.markdown',
         ];
     }
 
@@ -87,6 +82,16 @@ class LaravelMarkdownServiceProvider extends PackageServiceProvider
      |  Other Functions
      | ------------------------------------------------------------------------------------------------
      */
+    /**
+     * Register the Markdown parser.
+     */
+    private function registerMarkdownParser()
+    {
+        $this->singleton(Contracts\Parser::class, function () {
+            return new MarkdownParser(new Parsedown);
+        });
+    }
+
     /**
      * Register Blade directives.
      */
