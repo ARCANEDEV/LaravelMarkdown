@@ -27,10 +27,9 @@ Feel free to check out the [releases](https://github.com/ARCANEDEV/LaravelMarkdo
 
 ## Table of contents
 
-  1. [Requirements](1-Requirements.md)
-  2. [Installation and Setup](2-Installation-and-Setup.md)
-  3. [Configuration](3-Configuration.md)
-  4. [Usage](4-Usage.md)
+  1. [Installation and Setup](_docs/1-Installation-and-Setup.md)
+  2. [Configuration](_docs/2-Configuration.md)
+  3. [Usage](_docs/3-Usage.md)
 
 ## Contribution
 
@@ -46,7 +45,7 @@ If you discover any security related issues, please email arcanedev.maroc@gmail.
 - [All Contributors][link-contributors]
 
 [badge_license]:     https://img.shields.io/packagist/l/arcanedev/laravel-markdown.svg?style=flat-square
-[badge_laravel]:     https://img.shields.io/badge/Laravel-%205.1|5.2|5.3-orange.svg?style=flat-square
+[badge_laravel]:     https://img.shields.io/badge/Laravel-5.1%20to%205.4-orange.svg?style=flat-square
 [badge_build]:       https://img.shields.io/travis/ARCANEDEV/LaravelMarkdown.svg?style=flat-square
 [badge_coverage]:    https://img.shields.io/scrutinizer/coverage/g/ARCANEDEV/LaravelMarkdown.svg?style=flat-square
 [badge_quality]:     https://img.shields.io/scrutinizer/g/ARCANEDEV/LaravelMarkdown.svg?style=flat-square
