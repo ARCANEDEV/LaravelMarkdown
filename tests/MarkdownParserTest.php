@@ -23,7 +23,7 @@ class MarkdownParserTest extends TestCase
     {
         parent::setUp();
 
-        $this->parser = $this->app->make('arcanedev.markdown');
+        $this->parser = $this->app->make(\Arcanedev\LaravelMarkdown\Contracts\Parser::class);
     }
 
     public function tearDown()
