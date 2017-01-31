@@ -15,5 +15,5 @@ class Markdown extends Facade
      *
      * @return string
      */
-    protected static function getFacadeAccessor() { return 'arcanedev.markdown'; }
+    protected static function getFacadeAccessor() { return \Arcanedev\LaravelMarkdown\Contracts\Parser::class; }
 }
