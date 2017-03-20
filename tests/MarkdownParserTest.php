@@ -103,6 +103,22 @@ class MarkdownParserTest extends TestCase
     }
 
     /** @test */
+    public function it_can_escape_markups()
+    {
+        $this->assertEquals(
+            '<p>&lt;b&gt;This is a script&lt;/b&gt;&lt;script&gt;alert(\'hello\');&lt;/script&gt;</p>',
+            $this->parser->parse("<b>This is a script</b><script>alert('hello');</script>")
+        );
+
+        $this->app['config']->set('markdown.markups', false);
+
+        $this->assertEquals(
+            '<p><b>This is a script</b><script>alert(\'hello\');</script></p>',
+            $this->parser->parse("<b>This is a script</b><script>alert('hello');</script>")
+        );
+    }
+
+    /** @test */
     public function it_can_autolink_the_urls()
     {
         $md = 'You can find Parsedown at http://parsedown.org';
