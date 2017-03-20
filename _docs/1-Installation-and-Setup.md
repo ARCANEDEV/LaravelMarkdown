@@ -22,7 +22,6 @@ The Laravel Markdown package has a few system requirements:
 [laravel_markdown_1_1_x]: https://img.shields.io/badge/version-1.1.*-blue.svg?style=flat-square "Laravel Markdown v1.1.*"
 [laravel_markdown_1_2_x]: https://img.shields.io/badge/version-1.2.*-blue.svg?style=flat-square "Laravel Markdown v1.2.*"
 
-
 ## Composer
 
 You can install this package via [Composer](http://getcomposer.org/) by running this command: `composer require arcanedev/laravel-markdown`.
