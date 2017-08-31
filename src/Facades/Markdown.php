@@ -1,5 +1,6 @@
 <?php namespace Arcanedev\LaravelMarkdown\Facades;
 
+use Arcanedev\LaravelMarkdown\Contracts\Parser;
 use Illuminate\Support\Facades\Facade;
 
 /**
@@ -15,5 +16,5 @@ class Markdown extends Facade
      *
      * @return string
      */
-    protected static function getFacadeAccessor() { return \Arcanedev\LaravelMarkdown\Contracts\Parser::class; }
+    protected static function getFacadeAccessor() { return Parser::class; }
 }

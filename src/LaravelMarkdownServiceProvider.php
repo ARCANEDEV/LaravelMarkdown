@@ -11,10 +11,11 @@ use Parsedown;
  */
 class LaravelMarkdownServiceProvider extends PackageServiceProvider
 {
-    /* ------------------------------------------------------------------------------------------------
+    /* -----------------------------------------------------------------
      |  Properties
-     | ------------------------------------------------------------------------------------------------
+     | -----------------------------------------------------------------
      */
+
     /**
      * Package name.
      *
@@ -29,29 +30,18 @@ class LaravelMarkdownServiceProvider extends PackageServiceProvider
      */
     protected $defer   = true;
 
-    /* ------------------------------------------------------------------------------------------------
-     |  Getters & Setters
-     | ------------------------------------------------------------------------------------------------
+    /* -----------------------------------------------------------------
+     |  Main Methods
+     | -----------------------------------------------------------------
      */
-    /**
-     * Get the base path of the package.
-     *
-     * @return string
-     */
-    public function getBasePath()
-    {
-        return dirname(__DIR__);
-    }
 
-    /* ------------------------------------------------------------------------------------------------
-     |  Main Functions
-     | ------------------------------------------------------------------------------------------------
-     */
     /**
      * Register the service provider.
      */
     public function register()
     {
+        parent::register();
+
         $this->registerConfig();
 
         $this->registerMarkdownParser();
@@ -62,6 +52,8 @@ class LaravelMarkdownServiceProvider extends PackageServiceProvider
      */
     public function boot()
     {
+        parent::boot();
+
         $this->publishConfig();
         $this->registerBladeDirectives();
     }
@@ -78,10 +70,11 @@ class LaravelMarkdownServiceProvider extends PackageServiceProvider
         ];
     }
 
-    /* ------------------------------------------------------------------------------------------------
-     |  Other Functions
-     | ------------------------------------------------------------------------------------------------
+    /* -----------------------------------------------------------------
+     |  Other Methods
+     | -----------------------------------------------------------------
      */
+
     /**
      * Register the Markdown parser.
      */
