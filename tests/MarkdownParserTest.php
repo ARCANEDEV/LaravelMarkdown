@@ -110,6 +110,13 @@ class MarkdownParserTest extends TestCase
             '<p><a href="javascript%3Aalert(&#039;hello&#039;)">Link</a></p>',
             $this->parser->parse("[Link](javascript:alert('hello'))")
         );
+
+        $this->app['config']->set('markdown.safe-mode', true);
+
+        static::assertEquals(
+            '<p><a href="javascript%3Aalert(&#039;hello&#039;)">Link</a></p>',
+            $this->parser->parse("[Link](javascript:alert('hello'))")
+        );
     }
 
     /** @test */
