@@ -21,14 +21,14 @@ class MarkdownParserTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
         $this->parser = $this->app->make(\Arcanedev\LaravelMarkdown\Contracts\Parser::class);
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         unset($this->parser);
 
@@ -153,14 +153,12 @@ class MarkdownParserTest extends TestCase
         );
     }
 
-    /**
-     * @test
-     *
-     * @expectedException         \Arcanedev\LaravelMarkdown\Exceptions\ParserBufferingException
-     * @expectedExceptionMessage  Markdown buffering have not been started.
-     */
+    /** @test */
     public function it_must_throw_an_exception_when_the_buffering_is_not_started()
     {
+        $this->expectException(\Arcanedev\LaravelMarkdown\Exceptions\ParserBufferingException::class);
+        $this->expectExceptionMessage('Markdown buffering have not been started.');
+
         $this->parser->end();
     }
 }
