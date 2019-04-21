@@ -10,17 +10,19 @@ use Arcanedev\LaravelMarkdown\LaravelMarkdownServiceProvider;
  */
 class LaravelMarkdownServiceProviderTest extends TestCase
 {
-    /* ------------------------------------------------------------------------------------------------
+    /* -----------------------------------------------------------------
      |  Properties
-     | ------------------------------------------------------------------------------------------------
+     | -----------------------------------------------------------------
      */
+
     /** @var  \Arcanedev\LaravelMarkdown\LaravelMarkdownServiceProvider  */
     private $provider;
 
-    /* ------------------------------------------------------------------------------------------------
-     |  Main Functions
-     | ------------------------------------------------------------------------------------------------
+    /* -----------------------------------------------------------------
+     |  Main Methods
+     | -----------------------------------------------------------------
      */
+
     public function setUp()
     {
         parent::setUp();
@@ -35,10 +37,11 @@ class LaravelMarkdownServiceProviderTest extends TestCase
         parent::tearDown();
     }
 
-    /* ------------------------------------------------------------------------------------------------
-     |  Test Functions
-     | ------------------------------------------------------------------------------------------------
+    /* -----------------------------------------------------------------
+     |  Tests
+     | -----------------------------------------------------------------
      */
+
     /** @test */
     public function it_can_be_instantiated()
     {
@@ -50,7 +53,7 @@ class LaravelMarkdownServiceProviderTest extends TestCase
         ];
 
         foreach ($expectations as $expected) {
-            $this->assertInstanceOf($expected, $this->provider);
+            static::assertInstanceOf($expected, $this->provider);
         }
     }
 
@@ -61,6 +64,6 @@ class LaravelMarkdownServiceProviderTest extends TestCase
             \Arcanedev\LaravelMarkdown\Contracts\Parser::class,
         ];
 
-        $this->assertEquals($expected, $this->provider->provides());
+        static::assertEquals($expected, $this->provider->provides());
     }
 }

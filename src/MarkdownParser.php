@@ -60,8 +60,10 @@ class MarkdownParser implements Parser
      */
     public function parse($content)
     {
-        $this->parser->setUrlsLinked(config('markdown.urls', true));
-        $this->parser->setMarkupEscaped(config('markdown.markups', true));
+        $this->parser
+            ->setSafeMode(config('markdown.safe-mode', false))
+            ->setUrlsLinked(config('markdown.urls', true))
+            ->setMarkupEscaped(config('markdown.markups', true));
 
         if (config('markdown.xss', true)) {
             $content = preg_replace('/(\[.*\])\(javascript:.*\)/', '$1(#)', $content);

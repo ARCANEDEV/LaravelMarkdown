@@ -57,9 +57,11 @@ abstract class TestCase extends BaseTestCase
      */
     protected function getEnvironmentSetUp($app)
     {
-        /** @var \Illuminate\Config\Repository $config */
+        /** @var  \Illuminate\Config\Repository  $config */
         $config = $app['config'];
 
-        $config->set('view.paths', [realpath(__DIR__ . '/fixtures/views')]);
+        $config->set('view.paths', [
+            realpath(__DIR__ . '/fixtures/views')
+        ]);
     }
 }
