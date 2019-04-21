@@ -43,7 +43,7 @@ class MarkdownParserTest extends TestCase
     /** @test */
     public function it_can_be_instantiated()
     {
-        $this->assertInstanceOf(
+        static::assertInstanceOf(
             \Arcanedev\LaravelMarkdown\MarkdownParser::class,
             $this->parser
         );
@@ -52,7 +52,7 @@ class MarkdownParserTest extends TestCase
     /** @test */
     public function it_can_parse_markdown_into_html()
     {
-        $this->assertEquals(
+        static::assertEquals(
             '<h1>Hello</h1>',
             $this->parser->parse('# Hello')
         );
@@ -66,7 +66,7 @@ class MarkdownParserTest extends TestCase
         echo 'This text is **bold**!';
         $html = $this->parser->end();
 
-        $this->assertEquals(
+        static::assertEquals(
             "<h1>Hello</h1>\n<p>This text is <strong>bold</strong>!</p>",
             $html
         );
@@ -84,7 +84,7 @@ class MarkdownParserTest extends TestCase
         ];
 
         foreach ($expectations as $name => $expected) {
-            $this->assertEquals($expected, $view->make($name)->render());
+            static::assertEquals($expected, $view->make($name)->render());
         }
     }
 
@@ -92,15 +92,22 @@ class MarkdownParserTest extends TestCase
     /** @test */
     public function it_can_clean_xss()
     {
-        $this->assertEquals(
+        static::assertEquals(
             '<p><a href="#">Link</a></p>',
             $this->parser->parse("[Link](javascript:alert('hello'))")
         );
 
         $this->app['config']->set('markdown.xss', false);
 
-        $this->assertEquals(
-            '<p><a href="javascript:alert(\'hello\')">Link</a></p>',
+        static::assertEquals(
+            '<p><a href="javascript:alert(&#039;hello&#039;)">Link</a></p>',
+            $this->parser->parse("[Link](javascript:alert('hello'))")
+        );
+
+        $this->app['config']->set('markdown.safe-mode', true);
+
+        static::assertEquals(
+            '<p><a href="javascript%3Aalert(&#039;hello&#039;)">Link</a></p>',
             $this->parser->parse("[Link](javascript:alert('hello'))")
         );
     }
@@ -108,14 +115,14 @@ class MarkdownParserTest extends TestCase
     /** @test */
     public function it_can_escape_markups()
     {
-        $this->assertEquals(
+        static::assertEquals(
             '<p>&lt;b&gt;This is a script&lt;/b&gt;&lt;script&gt;alert(\'hello\');&lt;/script&gt;</p>',
             $this->parser->parse("<b>This is a script</b><script>alert('hello');</script>")
         );
 
         $this->app['config']->set('markdown.markups', false);
 
-        $this->assertEquals(
+        static::assertEquals(
             '<p><b>This is a script</b><script>alert(\'hello\');</script></p>',
             $this->parser->parse("<b>This is a script</b><script>alert('hello');</script>")
         );
@@ -126,14 +133,14 @@ class MarkdownParserTest extends TestCase
     {
         $md = 'You can find Parsedown at http://parsedown.org';
 
-        $this->assertEquals(
+        static::assertEquals(
             '<p>You can find Parsedown at <a href="http://parsedown.org">http://parsedown.org</a></p>',
             $this->parser->parse($md)
         );
 
         $this->app['config']->set('markdown.urls', false);
 
-        $this->assertEquals(
+        static::assertEquals(
             '<p>You can find Parsedown at http://parsedown.org</p>',
             $this->parser->parse($md)
         );

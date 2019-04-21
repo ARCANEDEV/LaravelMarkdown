@@ -11,14 +11,15 @@ use Arcanedev\LaravelMarkdown\Tests\TestCase;
  */
 class MarkdownTest extends TestCase
 {
-    /* ------------------------------------------------------------------------------------------------
-     |  Test Functions
-     | ------------------------------------------------------------------------------------------------
+    /* -----------------------------------------------------------------
+     |  Tests
+     | -----------------------------------------------------------------
      */
+
     /** @test */
     public function it_can_parse_markdown_into_html()
     {
-        $this->assertEquals(
+        static::assertEquals(
             '<h1>Hello</h1>',
             Markdown::parse('# Hello')
         );
@@ -32,7 +33,7 @@ class MarkdownTest extends TestCase
         echo 'This text is **bold**!';
         $html = Markdown::end();
 
-        $this->assertEquals(
+        static::assertEquals(
             "<h1>Hello</h1>\n<p>This text is <strong>bold</strong>!</p>",
             $html
         );
@@ -50,23 +51,22 @@ class MarkdownTest extends TestCase
         ];
 
         foreach ($expectations as $name => $expected) {
-            $this->assertEquals($expected, $view->make($name)->render());
+            static::assertEquals($expected, $view->make($name)->render());
         }
     }
-
 
     /** @test */
     public function it_can_clean_javascript_from_links()
     {
-        $this->assertEquals(
+        static::assertEquals(
             '<p><a href="#">Link</a></p>',
             Markdown::parse("[Link](javascript:alert('hello'))")
         );
 
         $this->app['config']->set('markdown.xss', false);
 
-        $this->assertEquals(
-            '<p><a href="javascript:alert(\'hello\')">Link</a></p>',
+        static::assertEquals(
+            '<p><a href="javascript:alert(&#039;hello&#039;)">Link</a></p>',
             Markdown::parse("[Link](javascript:alert('hello'))")
         );
     }
