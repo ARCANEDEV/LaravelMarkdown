@@ -6,7 +6,7 @@ Feel free to check out the [releases](https://github.com/ARCANEDEV/LaravelMarkdo
 
 ### Features
 
-  * Laravel `5.1 | 5.2 | 5.3 | 5.4 | 5.5` are Supported.
+  * Laravel `5.1` to `5.7` are Supported.
   * Easy setup & configuration.
   * Well tested (100% code coverage with maximum code quality).
   * Made with :heart: &amp; :coffee:.
