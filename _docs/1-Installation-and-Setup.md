@@ -10,7 +10,7 @@
 | ![Laravel Markdown v1.4.x][laravel_markdown_1_4_x] | ![Laravel v5.6][laravel_5_6]                                                                                        |
 | ![Laravel Markdown v1.5.x][laravel_markdown_1_5_x] | ![Laravel v5.7][laravel_5_7]                                                                                        |
 | ![Laravel Markdown v1.6.x][laravel_markdown_1_6_x] | ![Laravel v5.8][laravel_5_8]                                                                                        |
-| ![Laravel Markdown v2.0.x][laravel_markdown_2_0_x] | ![Laravel v6.0][laravel_6_0]                                                                                        |
+| ![Laravel Markdown v2.x][laravel_markdown_2_x]     | ![Laravel v6.x][laravel_6_x]                                                                                        |
 
 [laravel_5_0]:  https://img.shields.io/badge/v5.0-supported-brightgreen.svg?style=flat-square "Laravel v5.0"
 [laravel_5_1]:  https://img.shields.io/badge/v5.1-supported-brightgreen.svg?style=flat-square "Laravel v5.1"
@@ -21,15 +21,15 @@
 [laravel_5_6]:  https://img.shields.io/badge/v5.6-supported-brightgreen.svg?style=flat-square "Laravel v5.6"
 [laravel_5_7]:  https://img.shields.io/badge/v5.7-supported-brightgreen.svg?style=flat-square "Laravel v5.7"
 [laravel_5_8]:  https://img.shields.io/badge/v5.8-supported-brightgreen.svg?style=flat-square "Laravel v5.8"
-[laravel_6_0]:  https://img.shields.io/badge/v6.0-supported-brightgreen.svg?style=flat-square "Laravel v6.0"
+[laravel_6_x]:  https://img.shields.io/badge/v6.x-supported-brightgreen.svg?style=flat-square "Laravel v6.x"
 
-[laravel_markdown_1_1_x]: https://img.shields.io/badge/version-1.1.*-blue.svg?style=flat-square "Laravel Markdown v1.1.*"
-[laravel_markdown_1_2_x]: https://img.shields.io/badge/version-1.2.*-blue.svg?style=flat-square "Laravel Markdown v1.2.*"
-[laravel_markdown_1_3_x]: https://img.shields.io/badge/version-1.3.*-blue.svg?style=flat-square "Laravel Markdown v1.3.*"
-[laravel_markdown_1_4_x]: https://img.shields.io/badge/version-1.4.*-blue.svg?style=flat-square "Laravel Markdown v1.4.*"
-[laravel_markdown_1_5_x]: https://img.shields.io/badge/version-1.5.*-blue.svg?style=flat-square "Laravel Markdown v1.5.*"
-[laravel_markdown_1_6_x]: https://img.shields.io/badge/version-1.6.*-blue.svg?style=flat-square "Laravel Markdown v1.6.*"
-[laravel_markdown_2_0_x]: https://img.shields.io/badge/version-2.0.*-blue.svg?style=flat-square "Laravel Markdown v2.0.*"
+[laravel_markdown_1_1_x]: https://img.shields.io/badge/version-1.1.x-blue.svg?style=flat-square "Laravel Markdown v1.1.x"
+[laravel_markdown_1_2_x]: https://img.shields.io/badge/version-1.2.x-blue.svg?style=flat-square "Laravel Markdown v1.2.x"
+[laravel_markdown_1_3_x]: https://img.shields.io/badge/version-1.3.x-blue.svg?style=flat-square "Laravel Markdown v1.3.x"
+[laravel_markdown_1_4_x]: https://img.shields.io/badge/version-1.4.x-blue.svg?style=flat-square "Laravel Markdown v1.4.x"
+[laravel_markdown_1_5_x]: https://img.shields.io/badge/version-1.5.x-blue.svg?style=flat-square "Laravel Markdown v1.5.x"
+[laravel_markdown_1_6_x]: https://img.shields.io/badge/version-1.6.x-blue.svg?style=flat-square "Laravel Markdown v1.6.x"
+[laravel_markdown_2_x]:   https://img.shields.io/badge/version-2.x-blue.svg?style=flat-square "Laravel Markdown v2.x"
 
 ## Composer
 
