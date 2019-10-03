@@ -1,7 +1,6 @@
 <?php namespace Arcanedev\LaravelMarkdown;
 
 use Arcanedev\Support\Providers\PackageServiceProvider;
-use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\Facades\Blade;
 
 /**
@@ -10,7 +9,7 @@ use Illuminate\Support\Facades\Blade;
  * @package  Arcanedev\LaravelMarkdown
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
-class LaravelMarkdownServiceProvider extends PackageServiceProvider implements DeferrableProvider
+class LaravelMarkdownServiceProvider extends PackageServiceProvider
 {
     /* -----------------------------------------------------------------
      |  Properties
@@ -37,8 +36,6 @@ class LaravelMarkdownServiceProvider extends PackageServiceProvider implements D
         parent::register();
 
         $this->registerConfig();
-
-        $this->singleton(Contracts\Parser::class, MarkdownParser::class);
     }
 
     /**
@@ -49,18 +46,6 @@ class LaravelMarkdownServiceProvider extends PackageServiceProvider implements D
         $this->publishConfig();
 
         $this->extendBladeDirectives();
-    }
-
-    /**
-     * Get the services provided by the provider.
-     *
-     * @return array
-     */
-    public function provides(): array
-    {
-        return [
-            Contracts\Parser::class,
-        ];
     }
 
     /* -----------------------------------------------------------------

@@ -33,6 +33,7 @@ abstract class TestCase extends BaseTestCase
     {
         return [
             \Arcanedev\LaravelMarkdown\LaravelMarkdownServiceProvider::class,
+            \Arcanedev\LaravelMarkdown\Providers\DeferredServicesProvider::class,
         ];
     }
 
