@@ -1,21 +1,22 @@
-<?php namespace Arcanedev\LaravelMarkdown\Tests;
+<?php namespace Arcanedev\LaravelMarkdown\Tests\Providers;
 
-use Arcanedev\LaravelMarkdown\LaravelMarkdownServiceProvider;
+use Arcanedev\LaravelMarkdown\Providers\DeferredServicesProvider;
+use Arcanedev\LaravelMarkdown\Tests\TestCase;
 
 /**
- * Class     LaravelMarkdownServiceProviderTest
+ * Class     DeferredServiceProviderTest
  *
- * @package  Arcanedev\LaravelMarkdown\Tests
+ * @package  Arcanedev\LaravelMarkdown\Tests\Providers
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
-class LaravelMarkdownServiceProviderTest extends TestCase
+class DeferredServiceProviderTest extends TestCase
 {
     /* -----------------------------------------------------------------
      |  Properties
      | -----------------------------------------------------------------
      */
 
-    /** @var  \Arcanedev\LaravelMarkdown\LaravelMarkdownServiceProvider  */
+    /** @var  \Arcanedev\LaravelMarkdown\Providers\DeferredServicesProvider  */
     private $provider;
 
     /* -----------------------------------------------------------------
@@ -27,7 +28,7 @@ class LaravelMarkdownServiceProviderTest extends TestCase
     {
         parent::setUp();
 
-        $this->provider = $this->app->getProvider(LaravelMarkdownServiceProvider::class);
+        $this->provider = $this->app->getProvider(DeferredServicesProvider::class);
     }
 
     public function tearDown(): void
@@ -48,8 +49,7 @@ class LaravelMarkdownServiceProviderTest extends TestCase
         $expectations = [
             \Illuminate\Support\ServiceProvider::class,
             \Arcanedev\Support\Providers\ServiceProvider::class,
-            \Arcanedev\Support\Providers\PackageServiceProvider::class,
-            \Arcanedev\LaravelMarkdown\LaravelMarkdownServiceProvider::class,
+            \Arcanedev\LaravelMarkdown\Providers\DeferredServicesProvider::class,
         ];
 
         foreach ($expectations as $expected) {
@@ -60,7 +60,9 @@ class LaravelMarkdownServiceProviderTest extends TestCase
     /** @test */
     public function it_can_provides()
     {
-        $expected = [];
+        $expected = [
+            \Arcanedev\LaravelMarkdown\Contracts\Parser::class,
+        ];
 
         static::assertEquals($expected, $this->provider->provides());
     }

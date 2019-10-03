@@ -37,7 +37,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Arcanedev\\LaravelMarkdown\\LaravelMarkdownServiceProvider"
+                "Arcanedev\\LaravelMarkdown\\LaravelMarkdownServiceProvider",
+                "Arcanedev\\LaravelMarkdown\\Providers\\DeferredServicesProvider"
             ]
         }
     }
