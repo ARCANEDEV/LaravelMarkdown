@@ -76,7 +76,7 @@ class MarkdownParserTest extends TestCase
     public function it_can_parse_via_blade_directive()
     {
         /** @var  \Illuminate\Contracts\View\Factory  $view */
-        $view = view();
+        $view = $this->app['view'];
 
         $expectations = [
             'blade-directive-one' => '<h1>Hello</h1>',

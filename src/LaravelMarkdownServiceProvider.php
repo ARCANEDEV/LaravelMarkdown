@@ -1,7 +1,8 @@
 <?php namespace Arcanedev\LaravelMarkdown;
 
-use Arcanedev\Support\PackageServiceProvider;
-use Parsedown;
+use Arcanedev\Support\Providers\PackageServiceProvider;
+use Illuminate\Contracts\Support\DeferrableProvider;
+use Illuminate\Support\Facades\Blade;
 
 /**
  * Class     LaravelMarkdownServiceProvider
@@ -9,7 +10,7 @@ use Parsedown;
  * @package  Arcanedev\LaravelMarkdown
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
-class LaravelMarkdownServiceProvider extends PackageServiceProvider
+class LaravelMarkdownServiceProvider extends PackageServiceProvider implements DeferrableProvider
 {
     /* -----------------------------------------------------------------
      |  Properties
@@ -23,13 +24,6 @@ class LaravelMarkdownServiceProvider extends PackageServiceProvider
      */
     protected $package = 'markdown';
 
-    /**
-     * Indicates if loading of the provider is deferred.
-     *
-     * @var bool
-     */
-    protected $defer   = true;
-
     /* -----------------------------------------------------------------
      |  Main Methods
      | -----------------------------------------------------------------
@@ -38,24 +32,23 @@ class LaravelMarkdownServiceProvider extends PackageServiceProvider
     /**
      * Register the service provider.
      */
-    public function register()
+    public function register(): void
     {
         parent::register();
 
         $this->registerConfig();
 
-        $this->registerMarkdownParser();
+        $this->singleton(Contracts\Parser::class, MarkdownParser::class);
     }
 
     /**
      * Boot the service provider.
      */
-    public function boot()
+    public function boot(): void
     {
-        parent::boot();
-
         $this->publishConfig();
-        $this->registerBladeDirectives();
+
+        $this->extendBladeDirectives();
     }
 
     /**
@@ -63,7 +56,7 @@ class LaravelMarkdownServiceProvider extends PackageServiceProvider
      *
      * @return array
      */
-    public function provides()
+    public function provides(): array
     {
         return [
             Contracts\Parser::class,
@@ -76,32 +69,17 @@ class LaravelMarkdownServiceProvider extends PackageServiceProvider
      */
 
     /**
-     * Register the Markdown parser.
-     */
-    private function registerMarkdownParser()
-    {
-        $this->singleton(Contracts\Parser::class, function () {
-            return new MarkdownParser(new Parsedown);
-        });
-    }
-
-    /**
      * Register Blade directives.
      */
-    private function registerBladeDirectives()
+    private function extendBladeDirectives(): void
     {
-        /** @var  \Illuminate\View\Compilers\BladeCompiler  $blade */
-        $blade = $this->app['view']->getEngineResolver()->resolve('blade')->getCompiler();
-
-        $blade->directive('parsedown', function ($markdown) {
-            return "<?php echo markdown()->parse($markdown); ?>";
+        Blade::directive('markdown', function ($markdown) {
+            return empty($markdown)
+                ? '<?php markdown()->begin(); ?>'
+                : "<?php echo markdown()->parse($markdown); ?>";
         });
 
-        $blade->directive('markdown', function () {
-            return '<?php markdown()->begin(); ?>';
-        });
-
-        $blade->directive('endmarkdown', function () {
+        Blade::directive('endmarkdown', function () {
             return '<?php echo markdown()->end(); ?>';
         });
     }
