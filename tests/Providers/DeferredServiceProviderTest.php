@@ -61,6 +61,7 @@ class DeferredServiceProviderTest extends TestCase
     public function it_can_provides()
     {
         $expected = [
+            \Arcanedev\LaravelMarkdown\Contracts\Markdown::class,
             \Arcanedev\LaravelMarkdown\Contracts\Parser::class,
         ];
 
