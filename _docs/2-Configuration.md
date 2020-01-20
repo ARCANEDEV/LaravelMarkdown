@@ -6,36 +6,21 @@
 return [
 
     /* -----------------------------------------------------------------
-     |  Set Safe mode
+     |  Parsers
      | -----------------------------------------------------------------
      */
 
-    'safe-mode' => false,
+    'default' => 'commonmark',
 
-    /* -----------------------------------------------------------------
-     |  Escape Cross-site scripting
-     | -----------------------------------------------------------------
-     | Allowing or not to escape the JavaScript in anchor tags.
-     | e.g. markdown like "[Link](javascript:alert('hello'))".
-     */
-
-    'xss' => true,
-
-    /* -----------------------------------------------------------------
-     |  Automatically link URLs
-     | -----------------------------------------------------------------
-     | Allowing or not to automatic-linking of URLs in your markdown.
-     */
-
-    'urls' => true,
-
-    /* -----------------------------------------------------------------
-     |  Escape Markups
-     | -----------------------------------------------------------------
-     | Allowing or not to escape the HTML markups.
-     */
-
-    'markups' => true,
+    'parsers' => [
+        'commonmark' => [
+            'class' => Arcanedev\LaravelMarkdown\Parsers\CommonMarkParser::class,
+        ],
+    ],
 
 ];
 ```
+
+The default parser is `commonmark` with `Arcanedev\LaravelMarkdown\Parsers\CommonMarkParser` class (check the `league/commonmark` package for more details).
+
+You can create/extend your own parser if you want.

@@ -1,28 +1,25 @@
-<?php namespace Arcanedev\LaravelMarkdown;
+<?php
+
+declare(strict_types=1);
+
+namespace Arcanedev\LaravelMarkdown\Parsers;
 
 use Arcanedev\LaravelMarkdown\Contracts\Parser;
 use Arcanedev\LaravelMarkdown\Exceptions\ParserBufferingException;
-use Parsedown;
+use Illuminate\Support\HtmlString;
 
 /**
- * Class     MarkdownParser
+ * Class     AbstractParser
  *
  * @package  Arcanedev\LaravelMarkdown\Parsers
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
-class MarkdownParser implements Parser
+abstract class AbstractParser implements Parser
 {
     /* -----------------------------------------------------------------
      |  Properties
      | -----------------------------------------------------------------
      */
-
-    /**
-     * Markdown parser.
-     *
-     * @var \Parsedown
-     */
-    protected $parser;
 
     /**
      * Indicates if the parser is currently buffering input.
@@ -32,50 +29,23 @@ class MarkdownParser implements Parser
     protected $buffering = false;
 
     /* -----------------------------------------------------------------
-     |  Constructor
-     | -----------------------------------------------------------------
-     */
-
-    /**
-     * MarkdownParser constructor.
-     *
-     * @param  \Parsedown  $parser
-     */
-    public function __construct(Parsedown $parser)
-    {
-        $this->parser = $parser;
-    }
-
-    /* -----------------------------------------------------------------
      |  Main Methods
      | -----------------------------------------------------------------
      */
 
     /**
-     * Parses a markdown string to HTML.
+     * Convert the given Markdown text into HTML.
      *
-     * @param  string  $content
+     * @param  string  $text
      *
-     * @return string
+     * @return \Illuminate\Support\HtmlString
      */
-    public function parse($content)
-    {
-        $this->parser
-            ->setSafeMode(config('markdown.safe-mode', false))
-            ->setUrlsLinked(config('markdown.urls', true))
-            ->setMarkupEscaped(config('markdown.markups', true));
-
-        if (config('markdown.xss', true)) {
-            $content = preg_replace('/(\[.*\])\(javascript:.*\)/', '$1(#)', $content);
-        }
-
-        return $this->parser->text($content);
-    }
+    abstract public function parse(string $text): HtmlString;
 
     /**
      * Start buffering output to be parsed.
      */
-    public function begin()
+    public function begin(): void
     {
         $this->buffering = true;
         ob_start();
@@ -84,11 +54,11 @@ class MarkdownParser implements Parser
     /**
      * Stop buffering output & return the parsed markdown string.
      *
-     * @return string
+     * @return \Illuminate\Support\HtmlString
      *
      * @throws \Arcanedev\LaravelMarkdown\Exceptions\ParserBufferingException
      */
-    public function end()
+    public function end(): HtmlString
     {
         if ($this->buffering === false) {
             throw new ParserBufferingException('Markdown buffering have not been started.');

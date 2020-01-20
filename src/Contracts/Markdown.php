@@ -7,12 +7,12 @@ namespace Arcanedev\LaravelMarkdown\Contracts;
 use Illuminate\Support\HtmlString;
 
 /**
- * Interface  Parser
+ * Interface     Markdown
  *
- * @package   Arcanedev\LaravelMarkdown\Contracts
- * @author    ARCANEDEV <arcanedev.maroc@gmail.com>
+ * @package  Arcanedev\LaravelMarkdown\Contracts
+ * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
-interface Parser
+interface Markdown
 {
     /* -----------------------------------------------------------------
      |  Main Methods
@@ -20,11 +20,11 @@ interface Parser
      */
 
     /**
-     * Convert the given Markdown text into HTML.
+     * Get the parser instance.
      *
-     * @param  string  $text
+     * @param  string|null  $driver
      *
-     * @return \Illuminate\Support\HtmlString
+     * @return \Arcanedev\LaravelMarkdown\Contracts\Parser
      */
-    public function parse(string $text): HtmlString;
+    public function parser($driver = null);
 }

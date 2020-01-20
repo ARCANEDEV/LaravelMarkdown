@@ -1,7 +1,8 @@
 <?php namespace Arcanedev\LaravelMarkdown\Providers;
 
-use Arcanedev\LaravelMarkdown\Contracts\Parser as ParserContract;
-use Arcanedev\LaravelMarkdown\MarkdownParser;
+use Arcanedev\LaravelMarkdown\Contracts\Markdown as MarkdownContract;
+use Arcanedev\LaravelMarkdown\Contracts\Parser;
+use Arcanedev\LaravelMarkdown\Markdown;
 use Arcanedev\Support\Providers\ServiceProvider;
 use Illuminate\Contracts\Support\DeferrableProvider;
 
@@ -23,7 +24,15 @@ class DeferredServicesProvider extends ServiceProvider implements DeferrableProv
      */
     public function register(): void
     {
-        $this->singleton(ParserContract::class, MarkdownParser::class);
+        $this->singleton(MarkdownContract::class, Markdown::class);
+
+        $this->app->resolving(MarkdownContract::class, function ($markdown, $app) {
+            foreach ($app['config']->get('markdown.parsers') as $name => $parser) {
+                $markdown->extend($name, function ($app) use ($parser) {
+                    return $app->make($parser['class']);
+                });
+            }
+        });
     }
 
     /**
@@ -34,7 +43,8 @@ class DeferredServicesProvider extends ServiceProvider implements DeferrableProv
     public function provides(): array
     {
         return [
-            ParserContract::class,
+            MarkdownContract::class,
+            Parser::class,
         ];
     }
 }

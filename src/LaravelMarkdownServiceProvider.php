@@ -1,4 +1,8 @@
-<?php namespace Arcanedev\LaravelMarkdown;
+<?php
+
+declare(strict_types=1);
+
+namespace Arcanedev\LaravelMarkdown;
 
 use Arcanedev\Support\Providers\PackageServiceProvider;
 use Illuminate\Support\Facades\Blade;

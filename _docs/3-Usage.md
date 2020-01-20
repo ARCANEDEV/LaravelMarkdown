@@ -41,7 +41,7 @@ echo markdown('# Hello'); // <h1>Hello</h1>
 ##### OR
 
 ```php
-echo markdown()->parse('# Hello') // <h1>Hello</h1>
+echo markdown()->parse('# Hello'); // <h1>Hello</h1>
 ```
 
 As you can see, the `markdown()` helper can return a `Arcanedev\LaravelMarkdown\MarkdownParser` object when there is no arguments.
@@ -51,9 +51,9 @@ As you can see, the `markdown()` helper can return a `Arcanedev\LaravelMarkdown\
 Of course, you could also resolve the parser from the service container.
 
 ```php
-$parser = app('Arcanedev\LaravelMarkdown\Contracts\Parser');
+$markdown = app(Arcanedev\LaravelMarkdown\Contracts\Markdown::class);
 
-echo $parser->parse('# Hello'); // <h1>Hello</h1>
+echo $markdown->parse('# Hello'); // <h1>Hello</h1>
 ```
 
 You can also inject the dependency into the class via the constructor for example:
@@ -63,7 +63,7 @@ You can also inject the dependency into the class via the constructor for exampl
 
 namespace App\Http\Controllers;
 
-use Arcanedev\LaravelMarkdown\Contracts\Parser as MarkdownParser;
+use Arcanedev\LaravelMarkdown\Contracts\Markdown;
 
 class PagesController implements Controller
 {
@@ -72,18 +72,26 @@ class PagesController implements Controller
      *
      * @var  \Arcanedev\LaravelMarkdown\Contracts\Parser
      */
-    protected $parser;
+    protected $markdown;
 
     /**
      * Create a new instance.
      *
-     * @param  \Arcanedev\LaravelMarkdown\Contracts\Parser  $parser
+     * @param  \Arcanedev\LaravelMarkdown\Contracts\Markdown  $markdown
      */
-    public function __construct(MarkdownParser $parser)
+    public function __construct(Markdown $markdown)
     {
-        $this->parser = $parser;
+        $this->markdown = $markdown;
     }
 
     //...
 }
+```
+
+You can also choose a specific parser if you have multiple registered parsers.
+
+```php
+$parser = markdown()->parser('custom-parser');
+
+echo $parser->parse('# Hello');
 ```

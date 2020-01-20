@@ -14,8 +14,6 @@
 
 A small and *easy-to-use* Markdown parser package for Laravel and it comes with some goodies to make your life easier.
 
-> This package is based on [Parsedown](https://github.com/erusev/parsedown) package by [@erusev](https://github.com/erusev).
-
 Feel free to check out the [releases](https://github.com/ARCANEDEV/LaravelMarkdown/releases), [license](LICENSE.md), and [contribution guidelines](CONTRIBUTING.md).
 
 ### Features

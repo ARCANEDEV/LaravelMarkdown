@@ -1,6 +1,6 @@
 <?php
 
-use Arcanedev\LaravelMarkdown\Contracts\Parser;
+use Arcanedev\LaravelMarkdown\Contracts\Markdown;
 
 if ( ! function_exists('markdown')) {
     /**
@@ -8,10 +8,11 @@ if ( ! function_exists('markdown')) {
      *
      * @param  string|null  $content
      *
-     * @return \Arcanedev\LaravelMarkdown\Contracts\Parser|string
+     * @return Arcanedev\LaravelMarkdown\Contracts\Markdown|Illuminate\Support\HtmlString
      */
-    function markdown($content = null) {
-        $markdown = app(Parser::class);
+    function markdown(?string $content = null) {
+        /** @var \Arcanedev\LaravelMarkdown\Markdown $markdown */
+        $markdown = app(Markdown::class);
 
         return is_null($content) ? $markdown : $markdown->parse($content);
     }

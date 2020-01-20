@@ -2,15 +2,15 @@
 
 ## Version Compatibility
 
-| Laravel Markdown                                   | Laravel                                                                                                             |
-|:---------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------|
-| ![Laravel Markdown v1.1.x][laravel_markdown_1_1_x] | ![Laravel v5.0][laravel_5_0] ![Laravel v5.1][laravel_5_1] ![Laravel v5.2][laravel_5_2] ![Laravel v5.3][laravel_5_3] |
-| ![Laravel Markdown v1.2.x][laravel_markdown_1_2_x] | ![Laravel v5.4][laravel_5_4]                                                                                        |
-| ![Laravel Markdown v1.3.x][laravel_markdown_1_3_x] | ![Laravel v5.5][laravel_5_5]                                                                                        |
-| ![Laravel Markdown v1.4.x][laravel_markdown_1_4_x] | ![Laravel v5.6][laravel_5_6]                                                                                        |
-| ![Laravel Markdown v1.5.x][laravel_markdown_1_5_x] | ![Laravel v5.7][laravel_5_7]                                                                                        |
-| ![Laravel Markdown v1.6.x][laravel_markdown_1_6_x] | ![Laravel v5.8][laravel_5_8]                                                                                        |
-| ![Laravel Markdown v2.x][laravel_markdown_2_x]     | ![Laravel v6.x][laravel_6_x]                                                                                        |
+| Laravel Markdown                                                                              | Laravel                                                                                                             |
+|:----------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------|
+| ![Laravel Markdown v1.1.x][laravel_markdown_1_1_x]                                            | ![Laravel v5.0][laravel_5_0] ![Laravel v5.1][laravel_5_1] ![Laravel v5.2][laravel_5_2] ![Laravel v5.3][laravel_5_3] |
+| ![Laravel Markdown v1.2.x][laravel_markdown_1_2_x]                                            | ![Laravel v5.4][laravel_5_4]                                                                                        |
+| ![Laravel Markdown v1.3.x][laravel_markdown_1_3_x]                                            | ![Laravel v5.5][laravel_5_5]                                                                                        |
+| ![Laravel Markdown v1.4.x][laravel_markdown_1_4_x]                                            | ![Laravel v5.6][laravel_5_6]                                                                                        |
+| ![Laravel Markdown v1.5.x][laravel_markdown_1_5_x]                                            | ![Laravel v5.7][laravel_5_7]                                                                                        |
+| ![Laravel Markdown v1.6.x][laravel_markdown_1_6_x]                                            | ![Laravel v5.8][laravel_5_8]                                                                                        |
+| ![Laravel Markdown v2.x][laravel_markdown_2_x] ![Laravel Markdown v3.x][laravel_markdown_3_x] | ![Laravel v6.x][laravel_6_x]                                                                                        |
 
 [laravel_5_0]:  https://img.shields.io/badge/v5.0-supported-brightgreen.svg?style=flat-square "Laravel v5.0"
 [laravel_5_1]:  https://img.shields.io/badge/v5.1-supported-brightgreen.svg?style=flat-square "Laravel v5.1"
@@ -30,6 +30,7 @@
 [laravel_markdown_1_5_x]: https://img.shields.io/badge/version-1.5.x-blue.svg?style=flat-square "Laravel Markdown v1.5.x"
 [laravel_markdown_1_6_x]: https://img.shields.io/badge/version-1.6.x-blue.svg?style=flat-square "Laravel Markdown v1.6.x"
 [laravel_markdown_2_x]:   https://img.shields.io/badge/version-2.x-blue.svg?style=flat-square "Laravel Markdown v2.x"
+[laravel_markdown_3_x]:   https://img.shields.io/badge/version-3.x-blue.svg?style=flat-square "Laravel Markdown v3.x"
 
 ## Composer
 
