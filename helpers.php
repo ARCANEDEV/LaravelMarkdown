@@ -8,7 +8,7 @@ if ( ! function_exists('markdown')) {
      *
      * @param  string|null  $content
      *
-     * @return \Arcanedev\LaravelMarkdown\Contracts\Markdown|string
+     * @return Arcanedev\LaravelMarkdown\Contracts\Markdown|Illuminate\Support\HtmlString
      */
     function markdown(?string $content = null) {
         /** @var \Arcanedev\LaravelMarkdown\Markdown $markdown */
