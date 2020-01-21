@@ -62,10 +62,10 @@ class LaravelMarkdownServiceProvider extends PackageServiceProvider
      */
     private function extendBladeDirectives(): void
     {
-        Blade::directive('markdown', function ($markdown) {
+        Blade::directive('markdown', function (string $markdown) {
             return empty($markdown)
                 ? '<?php markdown()->begin(); ?>'
-                : "<?php echo markdown()->parse($markdown); ?>";
+                : "<?php echo markdown()->parse({$markdown}); ?>";
         });
 
         Blade::directive('endmarkdown', function () {
