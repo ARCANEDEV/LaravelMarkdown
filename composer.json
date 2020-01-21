@@ -15,7 +15,7 @@
     "license": "MIT",
     "require": {
         "php":                         ">=7.2.0",
-        "arcanedev/support":           "^5.0",
+        "arcanedev/support":           "^5.1",
         "league/commonmark":           "^1.2",
         "league/commonmark-ext-table": "^2.1"
     },

@@ -27,4 +27,11 @@ interface Markdown
      * @return \Arcanedev\LaravelMarkdown\Contracts\Parser
      */
     public function parser($driver = null);
+
+    /**
+     * Build all the registered parsers.
+     *
+     * @return void
+     */
+    public function buildParsers();
 }

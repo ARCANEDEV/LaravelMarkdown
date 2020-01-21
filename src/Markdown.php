@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Arcanedev\LaravelMarkdown;
 
 use Arcanedev\LaravelMarkdown\Contracts\Markdown as MarkdownContract;
+use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Manager;
 
 /**
@@ -46,5 +47,17 @@ class Markdown extends Manager implements MarkdownContract
     public function parser($driver = null)
     {
         return $this->driver($driver);
+    }
+
+    /**
+     * Build all the registered parsers.
+     */
+    public function buildParsers(): void
+    {
+        foreach ($this->config->get('markdown.parsers', []) as $name => $parser) {
+            $this->extend($name, function (Application $app) use ($parser) {
+                return $app->make($parser['class']);
+            });
+        }
     }
 }
