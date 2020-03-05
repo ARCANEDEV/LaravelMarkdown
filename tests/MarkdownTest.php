@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace Arcanedev\LaravelMarkdown\Tests;
 
-use Arcanedev\LaravelMarkdown\Parsers\AbstractParser;
 use Illuminate\Support\HtmlString;
-use Illuminate\Support\Manager;
 
 /**
  * Class     MarkdownParserTest
@@ -22,7 +20,7 @@ class MarkdownTest extends TestCase
      */
 
     /** @test */
-    public function it_can_be_instantiated()
+    public function it_can_be_instantiated(): void
     {
         $markdown = $this->markdown();
 
@@ -38,7 +36,7 @@ class MarkdownTest extends TestCase
     }
 
     /** @test */
-    public function it_can_get_parser()
+    public function it_can_get_parser(): void
     {
         $parser = $this->markdown()->parser();
 
@@ -54,7 +52,7 @@ class MarkdownTest extends TestCase
     }
 
     /** @test */
-    public function it_can_parse_markdown_into_html()
+    public function it_can_parse_markdown_into_html(): void
     {
         $parsed = $this->markdown()->parse('# Hello');
 
@@ -63,7 +61,7 @@ class MarkdownTest extends TestCase
     }
 
     /** @test */
-    public function it_parse_a_block_of_markdown_into_html()
+    public function it_parse_a_block_of_markdown_into_html(): void
     {
         $md = $this->markdown();
 
@@ -79,7 +77,7 @@ class MarkdownTest extends TestCase
     }
 
     /** @test */
-    public function it_can_parse_via_blade_directive()
+    public function it_can_parse_via_blade_directive(): void
     {
         /** @var  \Illuminate\Contracts\View\Factory  $view */
         $view = $this->app['view'];
@@ -95,7 +93,7 @@ class MarkdownTest extends TestCase
     }
 
     /** @test */
-    public function it_can_clean_xss()
+    public function it_can_clean_xss(): void
     {
         static::assertStringContainsString(
             '<p><a>Link</a></p>',
@@ -117,7 +115,7 @@ class MarkdownTest extends TestCase
         );
     }
 
-    public function it_can_skip_clean_xss()
+    public function it_can_skip_clean_xss(): void
     {
         $this->app['config']->set('markdown.parser.options.allow_unsafe_links', true);
 
@@ -128,7 +126,7 @@ class MarkdownTest extends TestCase
     }
 
     /** @test */
-    public function it_can_skip_escape_markups()
+    public function it_can_skip_escape_markups(): void
     {
         $this->app['config']->set('markdown.parser.options.html_input', false);
 
@@ -139,7 +137,7 @@ class MarkdownTest extends TestCase
     }
 
     /** @test */
-    public function it_must_throw_an_exception_when_the_buffering_is_not_started()
+    public function it_must_throw_an_exception_when_the_buffering_is_not_started(): void
     {
         $this->expectException(\Arcanedev\LaravelMarkdown\Exceptions\ParserBufferingException::class);
         $this->expectExceptionMessage('Markdown buffering have not been started.');

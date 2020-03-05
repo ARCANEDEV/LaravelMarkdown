@@ -61,7 +61,7 @@ abstract class AbstractParser implements Parser
     public function end(): HtmlString
     {
         if ($this->buffering === false) {
-            throw new ParserBufferingException('Markdown buffering have not been started.');
+            throw ParserBufferingException::notStarted();
         }
 
         $markdown        = ob_get_clean();

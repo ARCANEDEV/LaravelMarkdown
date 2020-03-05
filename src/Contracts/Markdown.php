@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Arcanedev\LaravelMarkdown\Contracts;
 
-use Illuminate\Support\HtmlString;
-
 /**
  * Interface     Markdown
  *

@@ -7,7 +7,7 @@ namespace Arcanedev\LaravelMarkdown\Parsers;
 use Illuminate\Support\HtmlString;
 use League\CommonMark\CommonMarkConverter;
 use League\CommonMark\Environment;
-use League\CommonMark\Ext\Table\TableExtension;
+use League\CommonMark\Extension\Table\TableExtension;
 
 /**
  * Class     CommonMarkParser
@@ -31,7 +31,7 @@ class CommonMarkParser extends AbstractParser
      */
     public function parse(string $text): HtmlString
     {
-        $environment = tap(Environment::createCommonMarkEnvironment())
+        $environment = Environment::createCommonMarkEnvironment()
             ->addExtension(new TableExtension);
 
         $converter = new CommonMarkConverter([

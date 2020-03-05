@@ -1,4 +1,8 @@
-<?php namespace Arcanedev\LaravelMarkdown\Providers;
+<?php
+
+declare(strict_types=1);
+
+namespace Arcanedev\LaravelMarkdown\Providers;
 
 use Arcanedev\LaravelMarkdown\Contracts\Markdown as MarkdownContract;
 use Arcanedev\LaravelMarkdown\Contracts\Parser;
