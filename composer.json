@@ -40,5 +40,7 @@
                 "Arcanedev\\LaravelMarkdown\\Providers\\DeferredServicesProvider"
             ]
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
