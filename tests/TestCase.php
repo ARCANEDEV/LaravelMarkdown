@@ -1,4 +1,8 @@
-<?php namespace Arcanedev\LaravelMarkdown\Tests;
+<?php
+
+declare(strict_types=1);
+
+namespace Arcanedev\LaravelMarkdown\Tests;
 
 use Orchestra\Testbench\TestCase as BaseTestCase;
 

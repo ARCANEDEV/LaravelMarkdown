@@ -1,4 +1,8 @@
-<?php namespace Arcanedev\LaravelMarkdown\Tests;
+<?php
+
+declare(strict_types=1);
+
+namespace Arcanedev\LaravelMarkdown\Tests;
 
 use Arcanedev\LaravelMarkdown\LaravelMarkdownServiceProvider;
 
@@ -43,13 +47,13 @@ class LaravelMarkdownServiceProviderTest extends TestCase
      */
 
     /** @test */
-    public function it_can_be_instantiated()
+    public function it_can_be_instantiated(): void
     {
         $expectations = [
             \Illuminate\Support\ServiceProvider::class,
             \Arcanedev\Support\Providers\ServiceProvider::class,
             \Arcanedev\Support\Providers\PackageServiceProvider::class,
-            \Arcanedev\LaravelMarkdown\LaravelMarkdownServiceProvider::class,
+            LaravelMarkdownServiceProvider::class,
         ];
 
         foreach ($expectations as $expected) {
@@ -58,7 +62,7 @@ class LaravelMarkdownServiceProviderTest extends TestCase
     }
 
     /** @test */
-    public function it_can_provides()
+    public function it_can_provides(): void
     {
         $expected = [];
 
