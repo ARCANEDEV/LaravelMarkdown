@@ -10,7 +10,6 @@ use Arcanedev\LaravelMarkdown\Tests\TestCase;
 /**
  * Class     DeferredServiceProviderTest
  *
- * @package  Arcanedev\LaravelMarkdown\Tests\Providers
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class DeferredServiceProviderTest extends TestCase

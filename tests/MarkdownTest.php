@@ -7,9 +7,8 @@ namespace Arcanedev\LaravelMarkdown\Tests;
 use Illuminate\Support\HtmlString;
 
 /**
- * Class     MarkdownParserTest
+ * Class     MarkdownTest
  *
- * @package  Arcanedev\LaravelMarkdown\Tests
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class MarkdownTest extends TestCase

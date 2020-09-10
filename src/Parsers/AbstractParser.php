@@ -11,7 +11,6 @@ use Illuminate\Support\HtmlString;
 /**
  * Class     AbstractParser
  *
- * @package  Arcanedev\LaravelMarkdown\Parsers
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 abstract class AbstractParser implements Parser

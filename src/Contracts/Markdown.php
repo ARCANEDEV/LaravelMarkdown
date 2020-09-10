@@ -5,10 +5,9 @@ declare(strict_types=1);
 namespace Arcanedev\LaravelMarkdown\Contracts;
 
 /**
- * Interface     Markdown
+ * Interface  Markdown
  *
- * @package  Arcanedev\LaravelMarkdown\Contracts
- * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
+ * @author    ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 interface Markdown
 {

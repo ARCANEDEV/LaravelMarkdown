@@ -14,13 +14,13 @@
     "type":    "library",
     "license": "MIT",
     "require": {
-        "php":                         "^7.2.5",
-        "arcanedev/support":           "^7.0",
-        "league/commonmark":           "^1.3"
+        "php": "^7.3",
+        "arcanedev/support": "^8.0",
+        "league/commonmark": "^1.3"
     },
     "require-dev": {
-        "orchestra/testbench": "^5.0",
-        "phpunit/phpunit":     "^8.5|^9.0"
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.3"
     },
     "autoload": {
         "psr-4": {
@@ -33,13 +33,23 @@
             "Arcanedev\\LaravelMarkdown\\Tests\\": "tests/"
         }
     },
+    "scripts": {
+        "test": "phpunit",
+        "coverage": "phpunit --coverage-html build/coverage/html"
+    },
     "extra": {
+        "branch-alias": {
+            "dev-develop": "5.x-dev"
+        },
         "laravel": {
             "providers": [
                 "Arcanedev\\LaravelMarkdown\\LaravelMarkdownServiceProvider",
                 "Arcanedev\\LaravelMarkdown\\Providers\\DeferredServicesProvider"
             ]
         }
+    },
+    "config": {
+        "sort-packages": true
     },
     "minimum-stability": "dev",
     "prefer-stable": true
