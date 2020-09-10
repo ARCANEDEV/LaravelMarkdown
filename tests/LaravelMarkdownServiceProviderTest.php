@@ -9,7 +9,6 @@ use Arcanedev\LaravelMarkdown\LaravelMarkdownServiceProvider;
 /**
  * Class     LaravelMarkdownServiceProviderTest
  *
- * @package  Arcanedev\LaravelMarkdown\Tests
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class LaravelMarkdownServiceProviderTest extends TestCase

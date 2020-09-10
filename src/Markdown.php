@@ -11,7 +11,6 @@ use Illuminate\Support\Manager;
 /**
  * Class     Markdown
  *
- * @package  Arcanedev\LaravelMarkdown
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  *
  * @method  \Illuminate\Support\HtmlString  parse(string $text)

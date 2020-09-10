@@ -4,6 +4,7 @@
 
 | Laravel                      | Laravel Markdown                                                                              |
 |:-----------------------------|:----------------------------------------------------------------------------------------------|
+| ![Laravel v7.x][laravel_8_x] | ![Laravel Markdown v5.x][laravel_markdown_5_x]                                                |
 | ![Laravel v7.x][laravel_7_x] | ![Laravel Markdown v4.x][laravel_markdown_4_x]                                                |
 | ![Laravel v6.x][laravel_6_x] | ![Laravel Markdown v2.x][laravel_markdown_2_x] ![Laravel Markdown v3.x][laravel_markdown_3_x] |
 | ![Laravel v5.8][laravel_5_8] | ![Laravel Markdown v1.6.x][laravel_markdown_1_6_x]                                            |
@@ -16,6 +17,7 @@
 | ![Laravel v5.1][laravel_5_1] | ![Laravel Markdown v1.1.x][laravel_markdown_1_1_x]                                            |
 | ![Laravel v5.0][laravel_5_0] | ![Laravel Markdown v1.1.x][laravel_markdown_1_1_x]                                            |
 
+[laravel_8_x]:  https://img.shields.io/badge/version-8.x-blue.svg?style=flat-square "Laravel v8.x"
 [laravel_7_x]:  https://img.shields.io/badge/version-7.x-blue.svg?style=flat-square "Laravel v7.x"
 [laravel_6_x]:  https://img.shields.io/badge/version-6.x-blue.svg?style=flat-square "Laravel v6.x"
 [laravel_5_8]:  https://img.shields.io/badge/version-5.8-blue.svg?style=flat-square "Laravel v5.8"
@@ -28,6 +30,7 @@
 [laravel_5_1]:  https://img.shields.io/badge/version-5.1-blue.svg?style=flat-square "Laravel v5.1"
 [laravel_5_0]:  https://img.shields.io/badge/version-5.0-blue.svg?style=flat-square "Laravel v5.0"
 
+[laravel_markdown_5_x]:   https://img.shields.io/badge/version-5.x-blue.svg?style=flat-square "Laravel Markdown v5.x"
 [laravel_markdown_4_x]:   https://img.shields.io/badge/version-4.x-blue.svg?style=flat-square "Laravel Markdown v4.x"
 [laravel_markdown_3_x]:   https://img.shields.io/badge/version-3.x-blue.svg?style=flat-square "Laravel Markdown v3.x"
 [laravel_markdown_2_x]:   https://img.shields.io/badge/version-2.x-blue.svg?style=flat-square "Laravel Markdown v2.x"

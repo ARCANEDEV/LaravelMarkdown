@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Blade;
 /**
  * Class     LaravelMarkdownServiceProvider
  *
- * @package  Arcanedev\LaravelMarkdown
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class LaravelMarkdownServiceProvider extends PackageServiceProvider

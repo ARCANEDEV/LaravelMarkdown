@@ -12,7 +12,6 @@ use League\CommonMark\Extension\Table\TableExtension;
 /**
  * Class     CommonMarkParser
  *
- * @package  Arcanedev\LaravelMarkdown
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class CommonMarkParser extends AbstractParser

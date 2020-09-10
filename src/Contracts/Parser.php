@@ -9,7 +9,6 @@ use Illuminate\Support\HtmlString;
 /**
  * Interface  Parser
  *
- * @package   Arcanedev\LaravelMarkdown\Contracts
  * @author    ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 interface Parser
