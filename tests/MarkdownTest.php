@@ -127,11 +127,11 @@ class MarkdownTest extends TestCase
     /** @test */
     public function it_can_skip_escape_markups(): void
     {
-        $this->app['config']->set('markdown.parser.options.html_input', false);
+        $this->app['config']->set('markdown.parsers.commonmark.options.html_input', 'allow');
 
         static::assertStringContainsString(
-            '<p><b>This is a script</b><script>alert(\'hello\');</script></p>',
-            $this->markdown()->parse("<b>This is a script</b><script>alert('hello');</script>")->toHtml()
+            "<p><strong>This is a script</strong>&lt;script>alert('hello');&lt;/script></p>\n",
+            $this->markdown()->parse("**This is a script**<script>alert('hello');</script>")->toHtml()
         );
     }
 

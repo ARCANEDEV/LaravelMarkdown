@@ -27,6 +27,42 @@ abstract class AbstractParser implements Parser
      */
     protected $buffering = false;
 
+    /**
+     * Parser's options.
+     *
+     * @var array
+     */
+    protected $options = [];
+
+    /* -----------------------------------------------------------------
+     |  Getters & Setters
+     | -----------------------------------------------------------------
+     */
+
+    /**
+     * Get the parser's options.
+     *
+     * @return array
+     */
+    public function getOptions(): array
+    {
+        return $this->options;
+    }
+
+    /**
+     * Set the parser's options.
+     *
+     * @param  array  $options
+     *
+     * @return $this
+     */
+    public function setOptions(array $options): self
+    {
+        $this->options = $options;
+
+        return $this;
+    }
+
     /* -----------------------------------------------------------------
      |  Main Methods
      | -----------------------------------------------------------------

@@ -53,9 +53,15 @@ class Markdown extends Manager implements MarkdownContract
      */
     public function buildParsers(): void
     {
-        foreach ($this->config->get('markdown.parsers', []) as $name => $parser) {
-            $this->extend($name, function (Application $app) use ($parser) {
-                return $app->make($parser['class']);
+        $parsers = array_keys($this->config->get('markdown.parsers', []));
+
+        foreach ($parsers as $name) {
+            $this->extend($name, function (Application $app) use ($name) {
+                $config = $app['config'];
+
+                return $app
+                    ->make($config->get("markdown.parsers.{$name}.class"))
+                    ->setOptions($config->get("markdown.parsers.{$name}.options") ?? []);
             });
         }
     }
