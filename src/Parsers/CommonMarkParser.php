@@ -5,9 +5,7 @@ declare(strict_types=1);
 namespace Arcanedev\LaravelMarkdown\Parsers;
 
 use Illuminate\Support\HtmlString;
-use League\CommonMark\CommonMarkConverter;
-use League\CommonMark\Environment;
-use League\CommonMark\Extension\Table\TableExtension;
+use League\CommonMark\GithubFlavoredMarkdownConverter;
 
 /**
  * Class     CommonMarkParser
@@ -30,13 +28,10 @@ class CommonMarkParser extends AbstractParser
      */
     public function parse(string $text): HtmlString
     {
-        $environment = Environment::createCommonMarkEnvironment()
-            ->addExtension(new TableExtension);
+        $converter = new GithubFlavoredMarkdownConverter($this->getOptions());
 
-        $converter = new CommonMarkConverter([
-            'allow_unsafe_links' => false,
-        ], $environment);
-
-        return new HtmlString($converter->convertToHtml($text));
+        return new HtmlString(
+            (string) $converter->convertToHtml($text)
+        );
     }
 }
