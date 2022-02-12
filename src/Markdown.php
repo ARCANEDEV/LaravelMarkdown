@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Arcanedev\LaravelMarkdown;
 
 use Arcanedev\LaravelMarkdown\Contracts\Markdown as MarkdownContract;
+use Arcanedev\LaravelMarkdown\Contracts\Parser;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Manager;
 
@@ -28,8 +29,6 @@ class Markdown extends Manager implements MarkdownContract
 
     /**
      * Get the default driver name.
-     *
-     * @return string
      */
     public function getDefaultDriver(): string
     {
@@ -38,12 +37,8 @@ class Markdown extends Manager implements MarkdownContract
 
     /**
      * Get the parser instance.
-     *
-     * @param  string|null  $driver
-     *
-     * @return \Arcanedev\LaravelMarkdown\Contracts\Parser
      */
-    public function parser($driver = null)
+    public function parser(?string $driver = null): Parser
     {
         return $this->driver($driver);
     }

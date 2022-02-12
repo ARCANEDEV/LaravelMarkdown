@@ -18,7 +18,7 @@ class ParserBufferingException extends Exception
      | -----------------------------------------------------------------
      */
 
-    public static function notStarted(): self
+    public static function notStarted(): static
     {
         return new static('Markdown buffering have not been started.');
     }

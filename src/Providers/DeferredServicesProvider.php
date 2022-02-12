@@ -29,15 +29,13 @@ class DeferredServicesProvider extends ServiceProvider implements DeferrableProv
     {
         $this->singleton(MarkdownContract::class, Markdown::class);
 
-        $this->app->resolving(MarkdownContract::class, function (MarkdownContract $markdown) {
+        $this->app->resolving(MarkdownContract::class, function (MarkdownContract $markdown): void {
             $markdown->buildParsers();
         });
     }
 
     /**
      * Get the services provided by the provider.
-     *
-     * @return array
      */
     public function provides(): array
     {

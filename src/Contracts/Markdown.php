@@ -18,17 +18,11 @@ interface Markdown
 
     /**
      * Get the parser instance.
-     *
-     * @param  string|null  $driver
-     *
-     * @return \Arcanedev\LaravelMarkdown\Contracts\Parser
      */
-    public function parser($driver = null);
+    public function parser(?string $driver = null): Parser;
 
     /**
      * Build all the registered parsers.
-     *
-     * @return void
      */
-    public function buildParsers();
+    public function buildParsers(): void;
 }

@@ -22,17 +22,13 @@ abstract class AbstractParser implements Parser
 
     /**
      * Indicates if the parser is currently buffering input.
-     *
-     * @var bool
      */
-    protected $buffering = false;
+    protected bool $buffering = false;
 
     /**
      * Parser's options.
-     *
-     * @var array
      */
-    protected $options = [];
+    protected array $options = [];
 
     /* -----------------------------------------------------------------
      |  Getters & Setters
@@ -41,8 +37,6 @@ abstract class AbstractParser implements Parser
 
     /**
      * Get the parser's options.
-     *
-     * @return array
      */
     public function getOptions(): array
     {
@@ -51,12 +45,8 @@ abstract class AbstractParser implements Parser
 
     /**
      * Set the parser's options.
-     *
-     * @param  array  $options
-     *
-     * @return $this
      */
-    public function setOptions(array $options): self
+    public function setOptions(array $options): static
     {
         $this->options = $options;
 
@@ -70,10 +60,6 @@ abstract class AbstractParser implements Parser
 
     /**
      * Convert the given Markdown text into HTML.
-     *
-     * @param  string  $text
-     *
-     * @return \Illuminate\Support\HtmlString
      */
     abstract public function parse(string $text): HtmlString;
 
@@ -89,17 +75,14 @@ abstract class AbstractParser implements Parser
     /**
      * Stop buffering output & return the parsed markdown string.
      *
-     * @return \Illuminate\Support\HtmlString
-     *
      * @throws \Arcanedev\LaravelMarkdown\Exceptions\ParserBufferingException
+     * @throws \Throwable
      */
     public function end(): HtmlString
     {
-        if ($this->buffering === false) {
-            throw ParserBufferingException::notStarted();
-        }
+        throw_unless($this->buffering, ParserBufferingException::notStarted());
 
-        $markdown        = ob_get_clean();
+        $markdown = ob_get_clean();
         $this->buffering = false;
 
         return $this->parse($markdown);
