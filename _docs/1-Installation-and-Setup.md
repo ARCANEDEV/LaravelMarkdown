@@ -57,7 +57,7 @@ Once the package is installed, you can register the service provider in `config/
 ```php
 'providers' => [
     ...
-    Arcanedev\LaravelMarkdown\LaravelMarkdownServiceProvider::class,
+    Arcanedev\LaravelMarkdown\MarkdownServiceProvider::class,
 ],
 ```
 
@@ -66,5 +66,5 @@ Once the package is installed, you can register the service provider in `config/
 To publish the config file, run this command:
 
 ```bash
-$ php artisan vendor:publish --provider="Arcanedev\LaravelMarkdown\LaravelMarkdownServiceProvider"
+$ php artisan vendor:publish --provider="Arcanedev\LaravelMarkdown\MarkdownServiceProvider"
 ```

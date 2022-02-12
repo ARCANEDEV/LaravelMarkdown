@@ -35,7 +35,7 @@ abstract class TestCase extends BaseTestCase
     protected function getPackageProviders($app)
     {
         return [
-            \Arcanedev\LaravelMarkdown\LaravelMarkdownServiceProvider::class,
+            \Arcanedev\LaravelMarkdown\MarkdownServiceProvider::class,
             \Arcanedev\LaravelMarkdown\Providers\DeferredServicesProvider::class,
         ];
     }

@@ -20,10 +20,6 @@ interface Parser
 
     /**
      * Convert the given Markdown text into HTML.
-     *
-     * @param  string  $text
-     *
-     * @return \Illuminate\Support\HtmlString
      */
     public function parse(string $text): HtmlString;
 }

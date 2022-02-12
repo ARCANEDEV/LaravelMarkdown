@@ -4,21 +4,21 @@ declare(strict_types=1);
 
 namespace Arcanedev\LaravelMarkdown\Tests;
 
-use Arcanedev\LaravelMarkdown\LaravelMarkdownServiceProvider;
+use Arcanedev\LaravelMarkdown\MarkdownServiceProvider;
 
 /**
- * Class     LaravelMarkdownServiceProviderTest
+ * Class     MarkdownServiceProviderTest
  *
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
-class LaravelMarkdownServiceProviderTest extends TestCase
+class MarkdownServiceProviderTest extends TestCase
 {
     /* -----------------------------------------------------------------
      |  Properties
      | -----------------------------------------------------------------
      */
 
-    /** @var  \Arcanedev\LaravelMarkdown\LaravelMarkdownServiceProvider  */
+    /** @var  \Arcanedev\LaravelMarkdown\MarkdownServiceProvider  */
     private $provider;
 
     /* -----------------------------------------------------------------
@@ -30,7 +30,7 @@ class LaravelMarkdownServiceProviderTest extends TestCase
     {
         parent::setUp();
 
-        $this->provider = $this->app->getProvider(LaravelMarkdownServiceProvider::class);
+        $this->provider = $this->app->getProvider(MarkdownServiceProvider::class);
     }
 
     public function tearDown(): void
@@ -52,7 +52,7 @@ class LaravelMarkdownServiceProviderTest extends TestCase
             \Illuminate\Support\ServiceProvider::class,
             \Arcanedev\Support\Providers\ServiceProvider::class,
             \Arcanedev\Support\Providers\PackageServiceProvider::class,
-            LaravelMarkdownServiceProvider::class,
+            MarkdownServiceProvider::class,
         ];
 
         foreach ($expectations as $expected) {

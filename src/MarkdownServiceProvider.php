@@ -8,11 +8,11 @@ use Arcanedev\Support\Providers\PackageServiceProvider;
 use Illuminate\Support\Facades\Blade;
 
 /**
- * Class     LaravelMarkdownServiceProvider
+ * Class     MarkdownServiceProvider
  *
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
-class LaravelMarkdownServiceProvider extends PackageServiceProvider
+class MarkdownServiceProvider extends PackageServiceProvider
 {
     /* -----------------------------------------------------------------
      |  Properties
@@ -61,14 +61,12 @@ class LaravelMarkdownServiceProvider extends PackageServiceProvider
      */
     private function extendBladeDirectives(): void
     {
-        Blade::directive('markdown', function (string $markdown) {
+        Blade::directive('markdown', function (string $markdown): string {
             return empty($markdown)
                 ? '<?php markdown()->begin(); ?>'
                 : "<?php echo markdown()->parse({$markdown}); ?>";
         });
 
-        Blade::directive('endmarkdown', function () {
-            return '<?php echo markdown()->end(); ?>';
-        });
+        Blade::directive('endmarkdown', fn(): string => '<?php echo markdown()->end(); ?>');
     }
 }
